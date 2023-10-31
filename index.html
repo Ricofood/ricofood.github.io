@@ -4,22 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pizarra de Información</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #content-panel {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-        #button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Pizarra de Información</h1>
@@ -30,24 +15,6 @@
     <div id="content-panel">
         <p>Contenido inicial</p>
     </div>
-    <script>
-        const button1 = document.getElementById("button1");
-        const button2 = document.getElementById("button2");
-        const contentPanel = document.getElementById("content-panel");
-
-        // Funciones para cambiar el contenido
-        function mostrarContenido1() {
-            contentPanel.innerHTML = "<p>Contenido 1: Información importante</p>";
-        }
-
-        function mostrarContenido2() {
-            contentPanel.innerHTML = "<p>Contenido 2: Otra información relevante</p>";
-        }
-
-        // Agregar eventos a los botones
-        button1.addEventListener("click", mostrarContenido1);
-        button2.addEventListener("click", mostrarContenido2);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
