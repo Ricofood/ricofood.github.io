@@ -5,9 +5,11 @@ body {
 
 #content-panel {
     width: 80%;
+    height: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    background-color: #333333;
+    border: 20px solid #C0C0C0;
     text-align: center;
 }
 
