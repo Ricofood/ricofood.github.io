@@ -2,7 +2,13 @@ body {
     font-family: Arial, sans-serif;
     background-color: #AC1C1C;
 }
-
+header{
+    text-align: center;
+}
+#icon{
+    width: 250px;
+    text-align: center;
+}
 #content-panel {
     width: 80%;
     height: 400px;
@@ -22,6 +28,6 @@ body {
 }
 #button-container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 60px;
     margin-bottom: 80px;
 }
