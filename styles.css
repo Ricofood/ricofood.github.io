@@ -10,7 +10,7 @@ header{
     text-align: center;
 }
 .tab-panel {
-    border: 1px solid #ccc;
+    border: 1px solid #00583d;
     border-radius: 10px; /* Ajusta este valor segÃºn tu preferencia */
     width: 300px;
     margin: 0 auto;
@@ -28,9 +28,8 @@ header{
     cursor: pointer;
     background-color: #eee;
 }
-
 .tab-button.active {
-    background-color: #007bff; /* Color de fondo activo */
+    background-color: #00583d; /* Color de fondo activo */
     color: #fff; /* Color de texto activo */
 }
 #tab1{
@@ -38,4 +37,7 @@ header{
 }
 #tab2{
     border-top-right-radius: 10px;
+}
+.tab-content {
+    text-align: center;
 }
