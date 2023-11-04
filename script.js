@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 1</p>";
             } else if (button.id === "tab2") {
                 tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 5</p>";
+                tabPostres.innerHTML = "";
             }
         });
     });
