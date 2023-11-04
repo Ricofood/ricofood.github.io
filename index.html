@@ -8,12 +8,14 @@
 </head>
 <body>
     <header><img id="icon" src="rico!.png"></header>
-    <div id="button-container">
-        <button id="button1">MENÚ DEL DÍA</button>
-        <button id="button2">MENÚ DE LA SEMANA</button>
-    </div>
-    <div id="content-panel">
-        <p>Contenido inicial</p>
+    <div class="tab-panel">
+        <div class="tab-buttons">
+            <div class="tab-button active" id="tab1">Pestaña 1</div>
+            <div class="tab-button" id="tab2">Pestaña 2</div>
+        </div>
+        <div class="tab-content" id="content">
+            <p>Contenido de la pestaña 1</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
