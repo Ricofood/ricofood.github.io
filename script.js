@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Cambiar el contenido según la pestaña seleccionada
             if (button.id === "tab1") {
                 tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 1</p>";
+                tabPostres.style.display: "none"
             } else if (button.id === "tab2") {
                 tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 5</p>";
-                tabPostres.style.display: "none";
+                tabPostres.style.display: "default";
             }
         });
     });
