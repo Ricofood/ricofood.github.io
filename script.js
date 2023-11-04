@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (button.id === "tab1") {
                 tabContent.innerHTML = "<p>Contenido de la pestaña 1</p>";
             } else if (button.id === "tab2") {
-                tabContent.innerHTML = "<p>Contenido de la pestaña 2</p>";
+                tabContent.innerHTML = "<p>Contenido de la pestaña 5</p>";
             }
         });
     });
