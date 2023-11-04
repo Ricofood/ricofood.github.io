@@ -1,28 +1,20 @@
-const button1 = document.getElementById("button1");
-const button2 = document.getElementById("button2");
-const contentPanel = document.getElementById("content-panel");
 document.addEventListener("DOMContentLoaded", function () {
-    // Función para cambiar el contenido al cargar la página
-    function mostrarContenido1() {
-        contentPanel.innerHTML = "<p>Contenido 1: Información importante</p>";
-    }
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const tabContent = document.getElementById("content");
 
-    // Agregar evento de clic al botón 1
-    button1.addEventListener("click", mostrarContenido1);
+    tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Desactivar todas las pestañas
+            tabButtons.forEach((btn) => btn.classList.remove("active"));
+            // Activar la pestaña seleccionada
+            button.classList.add("active");
 
-    // Simular clic en el botón 1 al cargar la página
-    mostrarContenido1();
+            // Cambiar el contenido según la pestaña seleccionada
+            if (button.id === "tab1") {
+                tabContent.innerHTML = "<p>Contenido de la pestaña 1</p>";
+            } else if (button.id === "tab2") {
+                tabContent.innerHTML = "<p>Contenido de la pestaña 2</p>";
+            }
+        });
+    });
 });
-
-// Funciones para cambiar el contenido
-function mostrarContenido1() {
-    contentPanel.innerHTML = "<p>Contenido 1: Información importante</p>";
-}
-
-function mostrarContenido2() {
-    contentPanel.innerHTML = "<p>Contenido 2: Otra información relevante</p>";
-}
-
-// Agregar eventos a los botones
-button1.addEventListener("click", mostrarContenido1);
-button2.addEventListener("click", mostrarContenido2);
