@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #AC1C1C;
+    background-color: transparent;
 }
 header{
     text-align: center;
@@ -9,25 +9,33 @@ header{
     width: 250px;
     text-align: center;
 }
-#content-panel {
-    width: 80%;
-    height: 400px;
+.tab-panel {
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Ajusta este valor segÃºn tu preferencia */
+    width: 300px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #333333;
-    border: 20px solid #C0C0C0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
     text-align: center;
+    cursor: pointer;
+    background-color: #eee;
 }
-#button1{
-    padding: 20px;
-    margin-right: 50px
+
+.tab-button.active {
+    background-color: #007bff; /* Color de fondo activo */
+    color: #fff; /* Color de texto activo */
 }
-#button2{
-    padding: 20px;
-    margin-left: 50px
+#tab1{
+    border-top-left-radius: 10px;
 }
-#button-container {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 80px;
+#tab2{
+    border-top-right-radius: 10px;
 }
