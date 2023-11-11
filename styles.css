@@ -351,19 +351,19 @@ li a:hover {
 #wsp-icon {
     background-color: #25d366;
     color: #FFF;
-    padding: 6px 18px;
+    padding: 2px 8px;
     border-radius: 50%;
-    font-size: 100px;
+    font-size: 35px;
     position: fixed;
-    bottom: 40px;
-    right: 20px;
+    bottom: 90px;
+    right: 30px;
     text-align: center;
     z-index: 999;
 }
     #wsp-icon i {
-        margin-top: 8px;
-        margin-right: 3px;
-        margin-left: 2px;
+        margin-top: 5px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 /*RESPONSIVE RESPONSIVE*/
 @media (max-width: 952px) {
