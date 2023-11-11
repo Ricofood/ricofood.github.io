@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const tabButtons = document.querySelectorAll(".tab-button");
-    const tabAlmuerzos = document.getElementById("almuerzos");
+    const tabMenu = document.getElementById("menu");
+    const tabMenuSemanal = document.getElementById("menu-semanal");
     const tabPostres = document.getElementById("postres");
-    
+
     tabButtons.forEach((button) => {
         button.addEventListener("click", () => {
             // Desactivar todas las pestañas
@@ -12,10 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Cambiar el contenido según la pestaña seleccionada
             if (button.id === "tab1") {
-                tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 1</p>";
+                tabMenuSemanal.style.display = "none";
+                tabMenu.style.display = "block";
                 tabPostres.style.display = "block";
             } else if (button.id === "tab2") {
-                tabAlmuerzos.innerHTML = "<p>Contenido de la pestaña 5</p>";
+                tabMenu.style.display = "none";
+                tabMenuSemanal.style.display = "block";
                 tabPostres.style.display = "none";
             }
         });
