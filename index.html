@@ -4,25 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RICO!</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/224b424510.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/654edfaacec6a912820ec774/1heu1jcne';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </head>
 <body>
-    <header><img id="icon" src="rico!.png"></header>
+    <nav>
+        <input type="checkbox" id="toggle-menu" aria-label="Abrir menú">
+        <label for="toggle-menu" id="toggle-menu-button">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="" class="enlace">
+            <img class="logo" src="rico!.png">
+        </a>
+        <ul>
+            <li><a class="active" href="pagina1.html">MENÚ</a></li>
+            <li><a href="pagina2.html">PIZZAS</a></li>
+            <li><a href="pagina3.html">HAMBURGUESAS</a></li>
+            <li><a id="pedir-ahora" href="pagina4.html">PEDIR AHORA</a></li>
+        </ul>
+    </nav>
     <div class="tab-panel">
         <div class="tab-buttons">
-            <div class="tab-button active" id="tab1">Pestaña 1</div>
-            <div class="tab-button" id="tab2">Pestaña 2</div>
+            <div class="tab-button active" id="tab1">MENÚ DE HOY</div>
+            <div class="tab-button" id="tab2">MENÚ DE LA SEMANA</div>
         </div>
-        <div class="tab-almuerzos" id="almuerzos">
-            <p class="tab-content">Contenido de la pestaña 1</p>
+        <div class="tab-menu" id="menu">
+            <div class="espacio-menu" id="espacio-menu1">
+                <div class="info-principal">
+                    <p class="guion">-</p><p class="plato">AJÍ DE GALLINA</p><p class="precio">$3500</p>
+                </div>
+                <div class="info-secundaria"><p>(c/ARROZ Y PAPA)</p></div>
+            </div>
+            <div class="espacio-menu" id="espacio-menu2">
+                <div class="info-principal">
+                    <p class="guion">-</p><p class="plato">CARNE AL JUGO</p><p class="precio">$4000</p>
+                </div>
+                <div class="info-secundaria"><p>(c/ARROZ o PURÉ)</p></div>
+            </div>
         </div>
         <div class="tab-postres" id="postres">
             <h1>POSTRES</h1>
+            <div class="espacio-postre" id="espacio-postre1">
+                <div class="info-principal">
+                    <p class="guion">-</p><p class="plato">YOGURT NATURAL</p><p class="precio">$1000</p>
+                </div>
+                <div class="info-secundaria"><p>(INCLUYE 3 AGREGADOS)</p></div>
+            </div>
+            <div class="espacio-postre" id="espacio-postre2">
+                <div class="info-principal">
+                    <p class="guion">-</p><p class="plato">WAFFLES</p><p class="precio">$1200</p>
+                </div>
+                <div class="info-secundaria"><p>(c/ SALSA DE MANJAR)</p></div>
+            </div>
             <div>
-            <p class="tab-content">Contenido de Postres</p>
+            </div>
+        </div>
+        <div class="tab-menu-semanal" id="menu-semanal">
+            <div class="espacio-menu-semanal" id="menu-lunes">
+                <h1>LUNES</h1>
+                <div class="contenido-menu-semanal">
+                    <div class="platos">
+                        <div>
+                            <div class="info-principal">
+                                <p class="guion">-</p><p class="plato">AJÍ DE GALLINA</p>
+                            </div>
+                            <div class="info-secundaria"><p>(c/ARROZ Y PAPA)</p></div>
+                        </div>
+                        <div>
+                            <div class="info-principal">
+                                <p class="guion">-</p><p class="plato">CARNE AL JUGO</p>
+                            </div>
+                            <div class="info-secundaria"><p>(c/ARROZ o PURÉ)</p></div>
+                        </div>
+                    </div>
+                    <div class="postres">
+                        <div>
+                            <div class="info-principal">
+                                <p class="guion">-</p><p class="plato">AJÍ DE GALLINA</p>
+                            </div>
+                            <div class="info-secundaria"><p>(c/ARROZ Y PAPA)</p></div>
+                        </div>
+                        <div>
+                            <div class="info-principal">
+                                <p class="guion">-</p><p class="plato">CARNE AL JUGO</p>
+                            </div>
+                            <div class="info-secundaria"><p>(c/ARROZ o PURÉ)</p></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <a id="wsp-icon" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
     <script src="script.js"></script>
 </body>
 </html>
