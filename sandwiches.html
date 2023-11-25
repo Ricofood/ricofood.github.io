@@ -25,6 +25,11 @@
     <!--End of Tawk.to Script-->
 </head>
 <body>
+    <div id="pedido-dropdown-panel">
+    <div id="scroll-pedidos">
+        
+        </div>
+    <p id="dropdown-subtotal">Subtotal: $100000</p></div>
     <nav>
         <input type="checkbox" id="toggle-menu" aria-label="Abrir menú">
         <label for="toggle-menu" id="toggle-menu-button">
@@ -37,10 +42,25 @@
             <li><a class="active" href="https://ricofood.github.io/index.html">MENÚ</a></li>
             <li><a href="pagina2.html">PIZZAS</a></li>
             <li><a href="https://ricofood.github.io/sandwiches.html">SÁNDWICHES</a></li>
-            <li><a id="pedir-ahora" href="pagina4.html">PEDIR AHORA</a></li>
+            <li id="pedido"><i class="fa-solid fa-cart-shopping"></i><a id="total" href="pedido.html"></a><input type="checkbox" name="pedido-dropdown" id="pedido-dropdown" /><label for="pedido-dropdown"><i id="caret-down" class="fa-solid fa-caret-down"></i><i id="caret-up" class="fa-solid fa-caret-up"></i></label></li>
         </ul>
         <a id="wsp-icon" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
     </nav>
+
+    <div id="info"><p class="titulo">INSTRUCCIONES</p></div>
+    <div id="control">
+        <button id="abrir-confirmacion" class="agregar-sandwich">AGREGAR AL PEDIDO</button>
+        <button id="borrar-sandwich">BORRAR SÁNDWICH</button>
+        <div id="subtotal1">Subtotal: $0</div>
+    </div>
+    <div id="confirmacion" class="confirmacion">
+        <div class="modal">
+            <p>AGREGADO CON ÉXITO</p>
+            <button id="agregarOtro">AGREGAR OTRO SANDWICH</button>
+            <button id="irAPedido">IR A PEDIDO</button>
+        </div>
+    </div>
     <div id="bases">
         <p class="titulo">BASE DE SANDWICH</p>
         <p class="sub-titulo">CARNES</p>
@@ -48,7 +68,7 @@
         <div class="item"><label><input type="radio" name="base" value="2200" class="base-option"> Lomito <b class="precio-item">&nbsp;&nbsp;&nbsp;$2200</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2000" class="base-option"> Pollo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
         <p class="sub-titulo">HAMBURGUESAS DE CARNE</p>
-        <div class="item"><label><input type="radio" name="base" value="2500" class="base-option"> Vacuno <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
+        <div class="item"><label><input type="radio" name="base" value="2500" class="base-option"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2200" class="base-option"> Cerdo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2200</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2000" class="base-option"> Pollo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
         <p class="sub-titulo">HAMBURGUESAS VEGETARIANAS</p>
@@ -59,6 +79,7 @@
     </div>
     <div id="toppings">
         <p class="titulo">AGREGADOS</p>
+        <div class="separador-toppings"></div>
         <div class="topping-item"><input id="topping1" type="checkbox" name="topping1" value="500" class="topping-option"><label for="topping1"> Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
         <div class="topping-item"><input id="topping2" type="checkbox" name="topping2" value="400" class="topping-option"><label for="topping2"> Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
         <div class="topping-item"><input id="topping3" type="checkbox" name="topping3" value="400" class="topping-option"><label for="topping3"> Lechuga<b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
@@ -71,8 +92,25 @@
         <div class="topping-item"><input id="topping10" type="checkbox" name="topping10" value="700" class="topping-option"><label for="topping10"> Huevo Frito <b class="precio-item">&nbsp;&nbsp;&nbsp;$700</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
         <div class="topping-item"><input id="topping11" type="checkbox" name="topping11" value="700" class="topping-option"><label for="topping11"> Porotos Verdes <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
         <div class="topping-item"><input id="topping12" type="checkbox" name="topping12" value="700" class="topping-option"><label for="topping12"> Ají Verde <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="separador-toppings"></div>
     </div>
-    <div class="titulo" id="subtotal">Subtotal: $0</div>
+    <div id="salsas">
+        <p class="titulo">SALSAS</p>
+        <div class="separador-salsas"></div>
+        <div class="salsa-item"><input id="salsa1" type="checkbox" name="salsa1" value="200" class="salsa-option"><label for="salsa1"> Mayonesa <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa2" type="checkbox" name="salsa2" value="400" class="salsa-option"><label for="salsa2"> Mayonesa Casera <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa3" type="checkbox" name="salsa2" value="400" class="salsa-option"><label for="salsa3"> Mayonesa - Ajo <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa4" type="checkbox" name="salsa3" value="200" class="salsa-option"><label for="salsa4"> Ketchup <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa5" type="checkbox" name="salsa4" value="200" class="salsa-option"><label for="salsa5"> Mostaza <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa6" type="checkbox" name="salsa5" value="300" class="salsa-option"><label for="salsa6"> Ají Rojo <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa7" type="checkbox" name="salsa6" value="500" class="salsa-option"><label for="salsa7"> Salsa Verde <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa8" type="checkbox" name="salsa7" value="400" class="salsa-option"><label for="salsa8"> Salsa BBQ <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa9" type="checkbox" name="salsa8" value="600" class="salsa-option"><label for="salsa9"> Cebolla Caramelizada <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="salsa-item"><input id="salsa10" type="checkbox" name="salsa9" value="600" class="salsa-option"><label for="salsa10"> Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+        <div class="separador-salsas"></div>
+    </div>
+    <div class="titulo" id="subtotal2">Subtotal: $0</div>
+
     <script src="sandwiches-script.js"></script>
 </body>
 </html>
