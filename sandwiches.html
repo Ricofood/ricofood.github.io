@@ -40,15 +40,22 @@
         </a>
         <ul>
             <li><a class="active" href="https://ricofood.github.io/index.html">MENÚ</a></li>
-            <li><a href="pagina2.html">PIZZAS</a></li>
             <li><a href="https://ricofood.github.io/sandwiches.html">SÁNDWICHES</a></li>
-            <li id="pedido"><i class="fa-solid fa-cart-shopping"></i><a id="total" href="pedido.html"></a><input type="checkbox" name="pedido-dropdown" id="pedido-dropdown" /><label for="pedido-dropdown"><i id="caret-down" class="fa-solid fa-caret-down"></i><i id="caret-up" class="fa-solid fa-caret-up"></i></label></li>
+            <li><a href="https://ricofood.github.io/pizzas.html">PIZZAS</a></li>
+
         </ul>
+        <div id="pedido"><i class="fa-solid fa-cart-shopping">&nbsp;</i><a id="total" href="pedido.html"></a><i id="caret-down" class="fa-solid fa-caret-down"></i><i id="caret-up" class="fa-solid fa-caret-up"></i></div>
         <a id="wsp-icon" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
     </nav>
 
-    <div id="info"><p class="titulo">INSTRUCCIONES</p></div>
+    <div id="info">
+        <p class="titulo">INSTRUCCIONES</p>
+        <p class="instruccion">- Selecciona la base de tu sandwich. Puede ser de carne, vegetariana o sin base.</p>
+        <p class="instruccion">- Mejora tu sándwich con los agregados que quieras.</p>
+        <p class="instruccion">- Elige tus salsas. ¡La primera es gratis!</p>
+        <p class="instruccion">- Cuando estes satisfecho con tu sándwich, selecciona "Agregar al Pedido" y ¡Listo!.</p>
+    </div>
     <div id="control">
         <button id="abrir-confirmacion" class="agregar-sandwich">AGREGAR AL PEDIDO</button>
         <button id="borrar-sandwich">BORRAR SÁNDWICH</button>
@@ -56,26 +63,31 @@
     </div>
     <div id="confirmacion" class="confirmacion">
         <div class="modal">
-            <p>AGREGADO CON ÉXITO</p>
+            <p>¡AGREGADO CON ÉXITO!</p>
             <button id="agregarOtro">AGREGAR OTRO SANDWICH</button>
             <button id="irAPedido">IR A PEDIDO</button>
         </div>
     </div>
     <div id="bases">
-        <p class="titulo">BASE DE SANDWICH</p>
+        <p class="titulo">BASE DE SÁNDWICH</p>
+        <div style="margin-top: 35px" class="item"><label><input id="no-base" type="radio" name="base" value="1000" class="base-option"> Sin Base <b class="precio-item">&nbsp;&nbsp;&nbsp;$1000</b><i class="far fa-circle"></i></label></div>
         <p class="sub-titulo">CARNES</p>
         <div class="item"><label><input type="radio" name="base" value="2500" class="base-option"> Churrasco <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2200" class="base-option"> Lomito <b class="precio-item">&nbsp;&nbsp;&nbsp;$2200</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2000" class="base-option"> Pollo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
         <p class="sub-titulo">HAMBURGUESAS DE CARNE</p>
         <div class="item"><label><input type="radio" name="base" value="2500" class="base-option"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
+        <div class="item"><label><input type="radio" name="base" value="2500" class="base-option"> Doble Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2200" class="base-option"> Cerdo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2200</b><i class="far fa-circle"></i></label></div>
+        <div class="item"><label><input type="radio" name="base" value="2200" class="base-option"> Doble Cerdo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2200</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="2000" class="base-option"> Pollo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
+        <div class="item"><label><input type="radio" name="base" value="2000" class="base-option"> Doble Pollo <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
         <p class="sub-titulo">HAMBURGUESAS VEGETARIANAS</p>
-        <div class="item"><label><input type="radio" name="base" value="1700" class="base-option"> Soya <b class="precio-item">&nbsp;&nbsp;&nbsp;$1700</b><i class="far fa-circle"></i></label></div>
+        <div class="item"><label><input type="radio" name="base" value="1700" class="base-option"> Soya <b class="precio-item">&nbsp;&nbsp;&nbsp;$1700</b><i class="far fa-circle"></i></label></div>        
         <div class="item"><label><input type="radio" name="base" value="1700" class="base-option"> Porotos Negros <b class="precio-item">&nbsp;&nbsp;&nbsp;$1700</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="1500" class="base-option"> Lentejas <b class="precio-item">&nbsp;&nbsp;&nbsp;$1500</b><i class="far fa-circle"></i></label></div>
         <div class="item"><label><input type="radio" name="base" value="1500" class="base-option"> Quinoa <b class="precio-item">&nbsp;&nbsp;&nbsp;$1500</b><i class="far fa-circle"></i></label></div>
+       
     </div>
     <div id="toppings">
         <p class="titulo">AGREGADOS</p>
