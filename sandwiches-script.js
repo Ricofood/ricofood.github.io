@@ -5,32 +5,49 @@ const totalDisplay = document.getElementById('total');
 const dropdownTotalDisplay = document.getElementById('dropdown-subtotal');
 let total = JSON.parse(localStorage.getItem('total'));
 let contadorProductos = JSON.parse(localStorage.getItem('contadorProductos'));
+const botonAbrirConfirmacion = document.getElementById('abrir-confirmacion');
+let pedidoshtml = [];
 
 document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem('total') !== null) {
-        totalDisplay.textContent = "$ " + total;
-        dropdownTotalDisplay.textContent = "Subtotal:  $" + total;
+        totalDisplay.textContent = "$ " + total + " ";
+        dropdownTotalDisplay.textContent = "Subtotal:  $ " + total;
     }
     else {
-        totalDisplay.textContent = "$ 0";
+        totalDisplay.textContent = " $ 0 ";
         dropdownTotalDisplay.textContent = "$:  0";
     }
 });
-document.addEventListener("DOMContentLoaded", function () {
-    if (pedidoGeneral !== null) {
-        pedidoGeneral.forEach(pedido => {
-            agregarProducto(pedido.base, pedido.subtotal);
-        });
-    }
-    else {
-        pedidoGeneral = [];
-    }
-});
+document.addEventListener("DOMContentLoaded", actualizarPedido);
 document.addEventListener("DOMContentLoaded", function () {
     if (contadorProductos == null) {
         contadorProductos = 1;
     }
 });
+
+window.addEventListener('storage', function (event) {
+    if (event.key === 'total') {
+        total = event.newValue;
+        console.log(total);
+    }
+});
+window.addEventListener('storage', function (event) {
+    pedidoGeneral = [];
+    limpiarScrollHtml();
+    if (event.key === 'pedidoGeneral') {
+        
+        pedidoGeneral = JSON.parse(localStorage.getItem('pedidoGeneral'));
+        console.log(pedidoGeneral);
+        
+    }
+    actualizarPedido();
+    actualizarSubtotal();
+});
+function limpiarScrollHtml() {
+    pedidoshtml = [];
+    pedidoshtml = document.querySelectorAll('.pedido-scroll');
+    pedidoshtml.forEach(pedido => { pedido.remove() });
+}
 
 baseOptions.forEach(option => {
     option.addEventListener('click', function () {
@@ -49,6 +66,11 @@ baseOptions.forEach(option => {
         // Aquí puedes utilizar el valor seleccionado como desees
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const noBase = document.getElementById('no-base');
+    noBase.click();
+});
+
 const toppingOptions = document.querySelectorAll('.topping-option');
 const salsaOptions = document.querySelectorAll('.salsa-option');
 const subtotalDisplay1 = document.getElementById('subtotal1');
@@ -57,6 +79,25 @@ let subtotal = 0;
 let salsaMasCara = 0;
 let salsas = 0;
 
+function revisarBase() {
+    let alMenosUnoSeleccionado = false;
+
+    baseOptions.forEach(base => {
+        if (basechecked) {
+            alMenosUnoSeleccionado = true;
+        }
+    });
+
+    if (!alMenosUnoSeleccionado) {
+        alert('Selecciona al menos una opción antes de continuar.');
+        // Puedes detener la acción aquí o agregar lógica adicional
+    } else {
+        // Aquí puedes ejecutar la acción que necesitas realizar
+        console.log('¡Al menos una opción está seleccionada!');
+    }
+
+    return alMenosUnoSeleccionado;
+}
 // Función para calcular el subtotal
 function calcularSubtotal() {
     let baseValue = 0;
@@ -86,7 +127,6 @@ function calcularSubtotal() {
 
     subtotal = baseValue + toppingsValue + salsasValue;
     
-    
     subtotalDisplay1.textContent = `Subtotal: $${subtotal}`;
     subtotalDisplay2.textContent = `Subtotal: $${subtotal}`;
 }
@@ -104,7 +144,7 @@ function checkSalsas() {
     }
 }
 
-let sandwich = {id: "", base: "", toppings: [], salsas: [], subtotal: 0 };
+let sandwich = {tipo: "", id: "", base: "", toppings: [], salsas: [], subtotal: 0 };
 
 
 function clearSandwich() {
@@ -134,6 +174,7 @@ function agregarSandwich() {
     toppingOptions.forEach(topping => { if (topping.checked) { toppings.push(topping.nextElementSibling.textContent.trim().split('$')[0].trim()) } });
     salsaOptions.forEach(salsa => { if (salsa.checked) { salsas.push(salsa.nextElementSibling.textContent.trim().split('$')[0].trim()) } });
     sandwich = {
+        tipo: "sandwich",
         id: 'producto_' + contadorProductos,
         base: baseSandwich.split('$')[0].trim(),
         toppings: toppings,
@@ -141,14 +182,13 @@ function agregarSandwich() {
         subtotal: subtotal
     }
     pedidoGeneral.push(sandwich);
-    agregarProducto(sandwich.base, sandwich.subtotal);
+    agregarProducto(sandwich.base, sandwich.subtotal, sandwich.toppings);
     console.log(sandwich);
     
     localStorage.setItem('total', total + subtotal);
     localStorage.setItem('pedidoGeneral', JSON.stringify(pedidoGeneral));
     total = total + subtotal;
-    totalDisplay.textContent = "$ " + (total);
-    dropdownTotalDisplay.textContent = `Subtotal:   $${total}`;
+    actualizarSubtotal();
     clearSandwich();
 }
 
@@ -168,9 +208,11 @@ toppingOptions.forEach(option => {
 salsaOptions.forEach(option => {
     option.addEventListener('change', checkSalsas);
 });
-
 document.getElementById('abrir-confirmacion').addEventListener('click', function () {
-    document.getElementById('confirmacion').style.display = 'flex';
+    if (revisarBase) {
+        document.getElementById('confirmacion').style.display = 'flex';
+    }
+    
 });
 
 document.getElementById('agregarOtro').addEventListener('click', function () {
@@ -185,26 +227,7 @@ document.getElementById('irAPedido').addEventListener('click', function () {
 });
 document.getElementById('borrar-sandwich').addEventListener('click', clearSandwich);
 
-const pedidoDropdown = document.getElementById('pedido-dropdown');
-const pedidoDropdownPanel = document.getElementById('pedido-dropdown-panel');
-const pedidoCaretDown = document.getElementById('caret-down');
-const pedidoCaretUp = document.getElementById('caret-up');
 
-pedidoDropdown.addEventListener('change', function () {
-    if (this.checked) {
-        // Agregar estilos o realizar cambios al elementoAAfectar
-        pedidoDropdownPanel.style.top = '0%';
-        pedidoCaretDown.style.display = 'none';
-        pedidoCaretUp.style.display = 'inline-block';
-        // Otras acciones...
-    } else {
-        // Restaurar estilos o revertir cambios al elementoAAfectar
-        pedidoDropdownPanel.style.top = '-100%';
-        pedidoCaretDown.style.display = 'inline-block';
-        pedidoCaretUp.style.display = 'none';
-        // Otras acciones...
-    }
-});
 const scrollPedido = document.getElementById('scroll-pedidos');
 function agregarAPedido() {
     const nuevoPedido = document.createElement('div');
@@ -217,7 +240,7 @@ const contenedorProductos = document.getElementById('scroll-pedidos');
 const botonAgregarProducto = document.getElementById('abrir-confirmacion');
 
 
-function agregarProducto(_producto, _subtotal) {
+function agregarProducto(_producto, _subtotal, _toppings) {
     const nuevoDiv = document.createElement('div');
     nuevoDiv.id = 'producto_' + contadorProductos; // ID único para el producto
     nuevoDiv.className = 'pedido-scroll'; // Clase del producto
@@ -228,17 +251,30 @@ function agregarProducto(_producto, _subtotal) {
         eliminarProducto(nuevoDiv.id);
     });
 
+    const mainInfoDiv = document.createElement('div');
+    mainInfoDiv.className = 'main-info-pedido';
+    const secondaryInfoDiv = document.createElement('div');
+    secondaryInfoDiv.className = 'secondary-info-pedido';
+
+    nuevoDiv.appendChild(mainInfoDiv);
+    nuevoDiv.appendChild(secondaryInfoDiv);
+
     const textoPrincipal = document.createElement('p');
     textoPrincipal.className = 'pedido-scroll-main';
     textoPrincipal.textContent = _producto;
 
     const textoSubtotal = document.createElement('p');
     textoSubtotal.className = 'pedido-scroll-subtotal';
-    textoSubtotal.textContent = _subtotal; // Puedes ajustar el subtotal
+    textoSubtotal.textContent = "$" + _subtotal;
 
-    nuevoDiv.appendChild(iconoEliminar);
-    nuevoDiv.appendChild(textoPrincipal);
-    nuevoDiv.appendChild(textoSubtotal);
+    const textoToppings = document.createElement('p');
+    textoToppings.className = 'pedido-scroll-toppings';
+    textoToppings.textContent = _toppings;
+
+    mainInfoDiv.appendChild(iconoEliminar);
+    mainInfoDiv.appendChild(textoPrincipal);
+    mainInfoDiv.appendChild(textoSubtotal);
+    secondaryInfoDiv.appendChild(textoToppings);
 
     contenedorProductos.appendChild(nuevoDiv);
 
@@ -248,15 +284,38 @@ function agregarProducto(_producto, _subtotal) {
 // Función para eliminar un producto por su ID
 function eliminarProducto(idProducto) {
     const productoAEliminar = document.getElementById(idProducto);
-    
+    let valorProductoAEliminar = 0;
     if (productoAEliminar) {
         productoAEliminar.remove(); // Elimina el producto del DOM
         for (var i = 0; i < pedidoGeneral.length; i++) {
             if (pedidoGeneral[i].id === idProducto) {
+                valorProductoAEliminar = pedidoGeneral[i].subtotal;
                 pedidoGeneral.splice(i, 1);
+                total = total - valorProductoAEliminar;
+                localStorage.setItem('total', total);
                 localStorage.setItem('pedidoGeneral', JSON.stringify(pedidoGeneral));
+                actualizarSubtotal();
             }
         }
+    }
+}
+function actualizarSubtotal() {
+    totalDisplay.textContent = "$ " + total + " ";
+    dropdownTotalDisplay.textContent = `Subtotal:   $${total}`;
+}
+function actualizarPedido() {
+    if (pedidoGeneral !== null) {
+        pedidoGeneral.forEach(pedido => {
+            if (pedido.tipo === "pizza") {
+                agregarProducto("Pizza " + pedido.tamano + "/ " + pedido.masa, pedido.subtotal, pedido.toppings);
+            }
+            if (pedido.tipo === "sandwich") {
+                agregarProducto(pedido.base, pedido.subtotal, pedido.toppings);
+            }
+        });
+    }
+    else {
+        pedidoGeneral = [];
     }
 }
 
@@ -265,3 +324,34 @@ function clearJsons() {
 }
 document.getElementById('borrar-sandwich').addEventListener('click', clearJsons);
 
+
+
+let pedidoDropdownAbierto = false;
+document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (!pedidoDropdown.contains(target) && !pedidoDropdownPanel.contains(target)) {
+        if (pedidoDropdownAbierto) {
+            cerrarDropdownPedido();
+        }
+       
+    }
+});
+function abrirDropdownPedido() {
+    pedidoDropdownPanel.style.top = '0%';
+    pedidoCaretDown.style.display = 'none';
+    pedidoCaretUp.style.display = 'inline-block';
+    pedidoDropdownAbierto = true;
+}
+function cerrarDropdownPedido() {
+    pedidoDropdownPanel.style.top = '-100%';
+    pedidoCaretDown.style.display = 'inline-block';
+    pedidoCaretUp.style.display = 'none';
+    pedidoDropdownAbierto = false;
+}
+const pedidoDropdown = document.getElementById('pedido');
+const pedidoDropdownPanel = document.getElementById('pedido-dropdown-panel');
+const pedidoCaretDown = document.getElementById('caret-down');
+const pedidoCaretUp = document.getElementById('caret-up');
+
+pedidoCaretDown.addEventListener('click', abrirDropdownPedido);
+pedidoCaretUp.addEventListener('click', cerrarDropdownPedido);
