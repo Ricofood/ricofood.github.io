@@ -31,7 +31,7 @@ nav {
 
     nav ul {
         float: right;
-        margin-right: 20px;
+        margin-right: 170px;
         list-style: none;
         text-decoration: none;
     }
@@ -72,14 +72,19 @@ li a:hover {
 
 
 #pedido {
-    margin-left: 40px;
+    color: #FFF;
     font-family: 'Roboto Mono',sans-serif;
     font-weight: bolder;
     font-size: 15pt;
     text-decoration: none;
+    margin: 24px 30px 0px 0px;
+    float: right;
+    right: 0;
+    position: absolute;
 }
     #pedido a {
         text-decoration: none;
+        color: #FFF;
     }
 #pedido-dropdown{
     display:none;
@@ -108,7 +113,10 @@ li a:hover {
     font-weight: bolder;
     font-size: 15pt;
     padding: 15px 12px 26px 33px;
-    margin-top: 10px;
+    margin: 12px 0 0 -2px;
+    width: 297px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 .fa-caret-down{
     color: #FFF;
@@ -128,28 +136,59 @@ li a:hover {
 #scroll-pedidos {
     width: 280px; 
     height: 320px;
-    overflow: auto; 
-    border: 1px solid #ccc;
+    overflow: auto;
     margin-left: 7px;
 }
 .pedido-scroll {
-    margin-top: 8px;
-    display: flex;
-    justify-content: space-evenly;
+    display: block;
+    margin-top:25px;
 }
-    .pedido-scroll .fa-circle-xmark {
+    .pedido-scroll .main-info-pedido {
+        margin-top: 15px;
         display: flex;
-        align-items: center;
-        color: brown;
+        justify-content: space-between;
     }
-    .pedido-scroll .pedido-scroll-main{
-
+        .pedido-scroll .main-info-pedido .fa-circle-xmark {
+            display: flex;
+            align-items: center;
+            color: brown;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+        .pedido-scroll .main-info-pedido .pedido-scroll-main {
+            font-family: 'Roboto Condensed';
+            font-size: 13pt;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .pedido-scroll .main-info-pedido .pedido-scroll-subtotal {
+            font-family: 'Roboto Mono', sans-serif;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 10px;
+        }
+    .pedido-scroll .secondary-info-pedido {
+        display: flex;
+        width: 260px;
+        margin: 3px 0 0 0;
+        justify-content: center;
     }
-
+            .pedido-scroll .secondary-info-pedido .pedido-scroll-toppings {
+                margin: 0;
+                text-align: center;
+                max-width: 190px; /* Altura máxima para mostrar antes de activar el scroll */
+                overflow-x: auto; /* Aparecerá el scroll si el contenido excede la altura máxima */
+                white-space: pre-line;
+            }
+pedido-scroll::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+    
 #info {
     border: 3px solid #00583d;
     border-radius: 10px;
-    padding: 0px 0 67px 0;
+    padding: 0px 0 10px 0;
     width: 800px;
     margin: 20px 0 20px 20px;
     background-color: ivory;
@@ -157,13 +196,18 @@ li a:hover {
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
     float: left;
 }
+.instruccion {
+    margin: 7px 0px 0 41px;
+    font-family: 'Roboto Condensed';
+    font-size: 13pt;
+}
 #control {
     border: 3px solid #00583d;
     border-radius: 10px;
-    padding: 0px 0 67px 0;
+    padding: 0px 0 0px 0;
     width: 400px;
-    height: 130px;
-    margin: 20px 0 20px 20px;
+    height: 132px;
+    margin: 40px 0 37px 20px;
     background-color: ivory;
     color: #06170a;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
@@ -208,7 +252,7 @@ li a:hover {
     font-family: 'Roboto Mono',sans-serif;
     font-weight: bold;
 }
-.confirmacion {
+#confirmacion {
     display: none;
     position: fixed;
     top: 0;
@@ -219,20 +263,40 @@ li a:hover {
     justify-content: center;
     align-items: center;
 }
+    #confirmacion p {
+        font-family: 'Roboto Condensed',sans-serif;
+    }
 
+#agregarOtro {
+    font-family: 'Roboto Mono',sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+#irAPedido {
+    font-family: 'Roboto Mono',sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+}
 .modal {
     background-color: white;
     padding: 20px;
-    border-radius: 5px;
     text-align: center;
+    border: 3px solid #00583d;
+    border-radius: 10px;
 }
+    .modal p {
+        padding: 25px;
+        margin: 0;
+        font-size: 17pt;
+    }
 
 #bases {
     border: 3px solid #00583d;
     border-radius: 10px;
-    padding: 0px 0 67px 0;
+    padding: 0px 0 20px 0;
     width: 400px;
-    margin: 20px 0 20px 20px;
+    margin: 0px 0 20px 20px;
     background-color: ivory;
     color: #06170a;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
@@ -241,11 +305,12 @@ li a:hover {
 .titulo {
     background-color: #00583d;
     text-align: center;
-    margin-top: 0;
+    margin: -1px 0px 0px -2px;
     padding: 10px 0 10px 0;
     color: #FFF;
     font-family: 'Roboto Mono',sans-serif;
     font-weight: bold;
+    border-radius: 8px 8px 0px 0px;
 }
 .sub-titulo {
     font-family: 'Roboto Condensed',sans-serif;
@@ -316,7 +381,7 @@ li a:hover {
     border: 3px solid #00583d;
     border-radius: 10px;
     width: 430px;
-    margin: 20px;
+    margin: 0px 20px 20px 20px;
     background-color: ivory;
     color: #06170a;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
@@ -331,7 +396,7 @@ li a:hover {
         margin: 10px 0 5px 40px;
     }
     .separador-toppings{
-        margin: 54px 0;
+        margin: 33px 0;
     }
 .topping-item {
     margin-bottom: 20px;
@@ -363,7 +428,7 @@ li a:hover {
     border: 3px solid #00583d;
     border-radius: 10px;
     width: 350px;
-    margin: 20px 20px 20px 0;
+    margin: 0px 20px 20px 0;
     background-color: ivory;
     color: #06170a;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.4);
@@ -379,7 +444,7 @@ li a:hover {
     margin: 10px 0 5px 55px;
 }
 .separador-salsas {
-    margin: 50px 0;
+    margin: 29px 0;
 }
 .salsa-item {
     margin-bottom: 20px;
@@ -503,6 +568,7 @@ li a:hover {
 @media (max-width: 390px) {
     #toggle-menu-button {
         display: block;
+        margin-right: 215px;
     }
 
     #wsp-icon {
@@ -525,7 +591,7 @@ li a:hover {
 
     nav ul li {
         display: block;
-        margin: 50px 0;
+        margin: 50px 22px 0px 0px;
         line-height: 30px;
     }
 
@@ -541,13 +607,51 @@ li a:hover {
         right: 165px;
         transition: all .5s;
     }
-
+    .titulo {
+        width: 428px;
+    }
     #aviso-menu {
         font-size: 15pt;
     }
-
     .tab-panel {
         width: 90%;
+    }
+    #info {
+        display: none;
+    }
+    #control {
+        margin: 20px 20px 10px 20px;
+        width: 430px;
+        height: 95px;
+        bottom: 0;
+        position: fixed;
+        padding: 0;
+        display: flow;
+    }
+    #abrir-confirmacion {
+        width: 170px;
+        height: 35px;
+        margin: 45px 0 0 225px;
+        border-radius: 6px;
+        font-size: 10pt;
+    }
+    #borrar-sandwich {
+        width: 170px;
+        height: 35px;
+        margin: 7px 0px 0px -367px;
+        border-radius: 6px;
+        font-size: 10pt;
+    }
+    #subtotal1 {
+        background-color: #00583d;
+        text-align: center;
+        margin: -84px 0px 0px 0px;
+        width: 425px;
+        padding: 7px 0 7px 0;
+        color: #FFF;
+        font-family: 'Roboto Mono',sans-serif;
+        font-weight: bold;
+        border-radius: 8px 8px 0px 0px;
     }
     #bases {
         width: 430px;
@@ -558,12 +662,16 @@ li a:hover {
     }
     #salsas {
         width: 430px;
-        margin: 20px 20px 90px 20px;
+        margin: 20px 20px 120px 20px;
     }
+    #pedido-dropdown-panel {
+        margin: 80px -78px 0 0px;
+    }
+
     #subtotal2 {
-        margin: 20px 20px 10px 20px;
-        width: 430px;
-        bottom: 0;
-        position: fixed;
+        display:none;
+    }
+    .widget-visible{
+
     }
 }
