@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICO!</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&family=Raleway:wght@700&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/224b424510.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="congelados-pizza-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/654edfaacec6a912820ec774/1heu1jcne';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</head>
+<body>
+    <div id="pedido-dropdown-panel">
+        <div id="scroll-pedidos">
+
+        </div>
+        <p id="dropdown-subtotal">Subtotal: $</p>
+    </div>
+    <nav>
+        <input type="checkbox" id="toggle-menu" aria-label="Abrir menú">
+        <label for="toggle-menu" id="toggle-menu-button">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="https://ricofood.github.io/index.html" class="enlace">
+            <img class="logo" src="rico!.png">
+        </a>
+
+        <ul>
+            <li><a class="active" href="">COMIDAS</a></li>
+            <li><a href="https://ricofood.github.io/congelados-pizzas.html">PIZZAS</a></li>
+            <li><a href="">VARIOS</a></li>
+        </ul>
+        <div id="pedido"><i class="fa-solid fa-cart-shopping">&nbsp;</i><a id="total" href="pedido.html"></a><i id="caret-down" class="fa-solid fa-caret-down"></i><i id="caret-up" class="fa-solid fa-caret-up"></i></div>
+        <a id="wsp-icon" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+    </nav>
+
+    <div id="tamanos">
+        <p class="titulo">TAMAÑO DE PIZZA</p>
+        <div id="container-tamanos">
+            <div class="tamano"><label><input type="radio" name="tamano-option" value="Individual" class="tamano-option" id="individual"> Individual <i class="far fa-circle"></i></label></div>
+            <div class="tamano"><label><input type="radio" name="tamano-option" value="Mediana" class="tamano-option"> Mediana <i class="far fa-circle"></i></label></div>
+            <div class="tamano"><label><input type="radio" name="tamano-option" value="Familiar" class="tamano-option"> Familiar <i class="far fa-circle"></i></label></div>
+            <div class="tamano"><label><input type="radio" name="tamano-option" value="Cocktail" class="tamano-option"> Cocktail <i id="check-cocktail" class="far fa-circle"></i><i id="unidades-cocktail">(8 unidades)</i></label></div>
+        </div>
+    </div>
+    <div id="control">
+        <button id="abrir-confirmacion" class="agregar-pizza">AGREGAR AL PEDIDO</button>
+        <button id="borrar-pizza">BORRAR PIZZA</button>
+        <div id="subtotal1">Subtotal: $0</div>
+    </div>
+    <div id="confirmacion" class="confirmacion">
+        <div class="modal">
+            <p>¡AGREGADO CON ÉXITO!</p>
+            <button id="agregarOtro">AGREGAR OTRA PIZZA</button>
+            <button id="irAPedido">IR A PEDIDO</button>
+        </div>
+    </div>
+    <div id="tipo-masa-individual">
+        <p class="titulo">TIPO DE MASA</p>
+        <div class="tipo-masa-item"><label><input id="delgada-individual" type="radio" name="tipo-masa" value="3000" class="tipo-masa"> Delgada <b class="precio-item">&nbsp;&nbsp;&nbsp;$3000</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="tradicional-individual" type="radio" name="tipo-masa" value="3500" class="tipo-masa"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$3500</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="gruesa-individual" type="radio" name="tipo-masa" value="4000" class="tipo-masa"> Gruesa <b class="precio-item">&nbsp;&nbsp;&nbsp;$4000</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="tipo-masa-mediana">
+        <p class="titulo">TIPO DE MASA</p>
+        <div class="tipo-masa-item"><label><input id="delgada-mediana" type="radio" name="tipo-masa" value="3500" class="tipo-masa"> Delgada <b class="precio-item">&nbsp;&nbsp;&nbsp;$3500</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="tradicional-mediana" type="radio" name="tipo-masa" value="4000" class="tipo-masa"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$4000</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="gruesa-mediana" type="radio" name="tipo-masa" value="4500" class="tipo-masa"> Gruesa <b class="precio-item">&nbsp;&nbsp;&nbsp;$4500</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="tipo-masa-familiar">
+        <p class="titulo">TIPO DE MASA</p>
+        <div class="tipo-masa-item"><label><input id="delgada-familiar" type="radio" name="tipo-masa" value="4000" class="tipo-masa"> Delgada <b class="precio-item">&nbsp;&nbsp;&nbsp;$4000</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="tradicional-familiar" type="radio" name="tipo-masa" value="4500" class="tipo-masa"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$4500</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="gruesa-familiar" type="radio" name="tipo-masa" value="5000" class="tipo-masa"> Gruesa <b class="precio-item">&nbsp;&nbsp;&nbsp;$5000</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="tipo-masa-cocktail">
+        <p class="titulo">TIPO DE MASA</p>
+        <div class="tipo-masa-item"><label><input id="delgada-cocktail" type="radio" name="tipo-masa" value="2000" class="tipo-masa"> Delgada <b class="precio-item">&nbsp;&nbsp;&nbsp;$2000</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="tradicional-cocktail" type="radio" name="tipo-masa" value="2250" class="tipo-masa"> Tradicional <b class="precio-item">&nbsp;&nbsp;&nbsp;$2250</b><i class="far fa-circle"></i></label></div>
+        <div class="tipo-masa-item"><label><input id="gruesa-cocktail" type="radio" name="tipo-masa" value="2500" class="tipo-masa"> Gruesa <b class="precio-item">&nbsp;&nbsp;&nbsp;$2500</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="toppings-individual">
+        <p class="titulo">INGREDIENTES</p>
+        <div id="toppings-container">
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="extra-individual" type="checkbox" name="topping-individual-1" value="400" class="topping-option"><label for="extra-individual"> Extra Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="tomate-individual" type="checkbox" name="topping-individual-2" value="200" class="topping-option"><label for="tomate-individual"> Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="cebolla-individual" type="checkbox" name="topping-individual-3" value="200" class="topping-option"><label for="cebolla-individual"> Cebolla <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pepperoni-individual" type="checkbox" name="topping-individual-4" value="200" class="topping-option"><label for="pepperoni-individual"> Pepperoni <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="jamon-individual" type="checkbox" name="topping-individual-5" value="200" class="topping-option"><label for="jamon-individual"> Jamón <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="oregano-individual" type="checkbox" name="topping-individual-5.5" value="0" class="topping-option"><label for="oregano-individual"> Orégano <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+            <div class="toppings-separator"></div>
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="tocino-individual" type="checkbox" name="topping-individual-6" value="400" class="topping-option"><label for="tocino-individual"> Tocino <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="choclo-individual" type="checkbox" name="topping-individual-7" value="200" class="topping-option"><label for="choclo-individual"> Choclo <b class="precio-item">&nbsp;&nbsp;&nbsp;$200</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="champis-individual" type="checkbox" name="topping-individual-8" value="300" class="topping-option"><label for="champis-individual"> Champiñones <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="aceitunas-individual" type="checkbox" name="topping-individual-9" value="300" class="topping-option"><label for="aceitunas-individual"> Aceitunas <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimenton-individual" type="checkbox" name="topping-individual-10" value="300" class="topping-option"><label for="pimenton-individual-"> Pimentón <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimienta-individual" type="checkbox" name="topping-individual-10.5" value="0" class="topping-option"><label for="pimienta-individual"> Pimienta <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+        </div>
+    </div>
+    <div id="toppings-mediana">
+        <p class="titulo">INGREDIENTES</p>
+        <div id="toppings-container">
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="extra-mediana" type="checkbox" name="topping-mediana-1" value="700" class="topping-option"><label for="extra-mediana"> Extra Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$700</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="tomate-mediana" type="checkbox" name="topping-mediana-2" value="300" class="topping-option"><label for="tomate-mediana"> Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="cebolla-mediana" type="checkbox" name="topping-mediana-3" value="300" class="topping-option"><label for="cebolla-mediana"> Cebolla <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pepperoni-mediana" type="checkbox" name="topping-mediana-4" value="400" class="topping-option"><label for="pepperoni-mediana"> Pepperoni <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="jamon-mediana" type="checkbox" name="topping-mediana-5" value="400" class="topping-option"><label for="jamon-mediana"> Jamón <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="oregano-mediana" type="checkbox" name="topping-mediana-5.5" value="0" class="topping-option"><label for="oregano-mediana"> Orégano <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+            <div class="toppings-separator"></div>
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="tocino-mediana" type="checkbox" name="topping-mediana-6" value="600" class="topping-option"><label for="tocino-mediana"> Tocino <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="choclo-mediana" type="checkbox" name="topping-mediana-7" value="400" class="topping-option"><label for="choclo-mediana"> Choclo <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="champis-mediana" type="checkbox" name="topping-mediana-8" value="400" class="topping-option"><label for="champis-mediana"> Champiñones <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="aceitunas-mediana" type="checkbox" name="topping-mediana-9" value="400" class="topping-option"><label for="aceitunas-mediana"> Aceitunas <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimenton-mediana" type="checkbox" name="topping-mediana-10" value="400" class="topping-option"><label for="pimenton-mediana"> Pimentón <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimienta-mediana" type="checkbox" name="topping-mediana-10.5" value="0" class="topping-option"><label for="pimienta-mediana"> Pimienta <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+        </div>
+    </div>
+    <div id="toppings-familiar">
+        <p class="titulo">INGREDIENTES</p>
+        <div id="toppings-container">
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="extra-familiar" type="checkbox" name="topping-familiar-1" value="900" class="topping-option"><label for="extra-familiar"> Extra Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$900</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="tomate-familiar" type="checkbox" name="topping-familiar-2" value="500" class="topping-option"><label for="tomate-familiar"> Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="cebolla-familiar" type="checkbox" name="topping-familiar-3" value="500" class="topping-option"><label for="cebolla-familiar"> Cebolla <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pepperoni-familiar" type="checkbox" name="topping-familiar-4" value="500" class="topping-option"><label for="pepperoni-familiar"> Pepperoni <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="jamon-familiar" type="checkbox" name="topping-familiar-5" value="600" class="topping-option"><label for="jamon-familiar"> Jamón <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="oregano-familiar" type="checkbox" name="topping-familiar-5.5" value="0" class="topping-option"><label for="oregano-familiar"> Orégano <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+            <div class="toppings-separator"></div>
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="tocino-familiar" type="checkbox" name="topping-familiar-6" value="850" class="topping-option"><label for="tocino-familiar"> Tocino <b class="precio-item">&nbsp;&nbsp;&nbsp;$850</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="choclo-familiar" type="checkbox" name="topping-familiar-7" value="500" class="topping-option"><label for="choclo-familiar"> Choclo <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="champis-familiar" type="checkbox" name="topping-familiar-8" value="600" class="topping-option"><label for="champis-familiar"> Champiñones <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="aceitunas-familiar" type="checkbox" name="topping-familiar-9" value="600" class="topping-option"><label for="aceitunas-familiar"> Aceitunas <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimenton-familiar" type="checkbox" name="topping-familiar-10" value="600" class="topping-option"><label for="pimenton-familiar"> Pimentón <b class="precio-item">&nbsp;&nbsp;&nbsp;$800</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimienta-familiar" type="checkbox" name="topping-familiar-10.5" value="0" class="topping-option"><label for="pimienta-familiar"> Pimienta <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+        </div>
+    </div>
+    <div id="toppings-cocktail">
+        <p class="titulo">INGREDIENTES</p>
+        <div id="toppings-container">
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="extra-cocktail" type="checkbox" name="topping-cocktail-1" value="700" class="topping-option"><label for="extra-cocktail"> Extra Queso <b class="precio-item">&nbsp;&nbsp;&nbsp;$700</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="tomate-cocktail" type="checkbox" name="topping-cocktail-2" value="300" class="topping-option"><label for="tomate-cocktail"> Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="cebolla-cocktail" type="checkbox" name="topping-cocktail-3" value="300" class="topping-option"><label for="cebolla-cocktail"> Cebolla <b class="precio-item">&nbsp;&nbsp;&nbsp;$300</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pepperoni-cocktail" type="checkbox" name="topping-cocktail-4" value="400" class="topping-option"><label for="pepperoni-cocktail"> Pepperoni <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="jamon-cocktail" type="checkbox" name="topping-cocktail-5" value="400" class="topping-option"><label for="jamon-cocktail"> Jamón <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="oregano-cocktail" type="checkbox" name="topping-cocktail-5.5" value="0" class="topping-option"><label for="oregano-cocktail"> Orégano <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+            <div class="toppings-separator"></div>
+            <div class="toppings-subcontainer">
+                <div class="topping-item"><input id="tocino-cocktail" type="checkbox" name="topping-cocktail-6" value="850" class="topping-option"><label for="tocino-cocktail"> Tocino <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="choclo-cocktail" type="checkbox" name="topping-cocktail-7" value="400" class="topping-option"><label for="choclo-cocktail"> Choclo <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="champis-cocktail" type="checkbox" name="topping-cocktail-8" value="400" class="topping-option"><label for="champis-cocktail"> Champiñones <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="aceitunas-cocktail" type="checkbox" name="topping-cocktail-9" value="400" class="topping-option"><label for="aceitunas-cocktail"> Aceitunas <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimenton-cocktail" type="checkbox" name="topping-cocktail-10" value="400" class="topping-option"><label for="pimenton-cocktail"> Pimentón <b class="precio-item">&nbsp;&nbsp;&nbsp;$400</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+                <div class="topping-item"><input id="pimienta-cocktail" type="checkbox" name="topping-cocktail-10.5" value="0" class="topping-option"><label for="pimienta-cocktail"> Pimienta <b class="precio-item">&nbsp;&nbsp;&nbsp;¡Gratis!</b><i class="far fa-circle"></i><i class="fas fa-check-circle"></i></label></div>
+            </div>
+        </div>
+    </div>
+    <div id="salsas-base-individual">
+        <p class="titulo">SALSA BASE</p>
+        <div class="salsa-base-item"><label><input id="salsa-tomate-individual" type="radio" name="salsa-base" value="500" class="salsa-base-option"> Salsa de Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="crema-individual" type="radio" name="salsa-base" value="700" class="salsa-base-option"> Crema <b class="precio-item">&nbsp;&nbsp;&nbsp;$700</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="bbq-individual" type="radio" name="salsa-base" value="600" class="salsa-base-option"> Salsa BBQ <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="salsas-base-mediana">
+        <p class="titulo">SALSA BASE</p>
+        <div class="salsa-base-item"><label><input id="salsa-tomate-mediana" type="radio" name="salsa-base" value="750" class="salsa-base-option"> Salsa de Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$750</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="crema-mediana" type="radio" name="salsa-base" value="1000" class="salsa-base-option"> Crema <b class="precio-item">&nbsp;&nbsp;&nbsp;$1000</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="bbq-mediana" type="radio" name="salsa-base" value="900" class="salsa-base-option"> Salsa BBQ <b class="precio-item">&nbsp;&nbsp;&nbsp;$900</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="salsas-base-familiar">
+        <p class="titulo">SALSA BASE</p>
+        <div class="salsa-base-item"><label><input id="salsa-tomate-familiar" type="radio" name="salsa-base" value="1000" class="salsa-base-option"> Salsa de Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$1000</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="crema-familiar" type="radio" name="salsa-base" value="1300" class="salsa-base-option"> Crema <b class="precio-item">&nbsp;&nbsp;&nbsp;$1300</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="bbq-familiar" type="radio" name="salsa-base" value="1200" class="salsa-base-option"> Salsa BBQ <b class="precio-item">&nbsp;&nbsp;&nbsp;$1200</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <div id="salsas-base-cocktail">
+        <p class="titulo">SALSA BASE</p>
+        <div class="salsa-base-item"><label><input id="salsa-tomate-cocktail" type="radio" name="salsa-base" value="500" class="salsa-base-option"> Salsa de Tomate <b class="precio-item">&nbsp;&nbsp;&nbsp;$500</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="crema-cocktail" type="radio" name="salsa-base" value="700" class="salsa-base-option"> Crema <b class="precio-item">&nbsp;&nbsp;&nbsp;$700</b><i class="far fa-circle"></i></label></div>
+        <div class="salsa-base-item"><label><input id="bbq-cocktail" type="radio" name="salsa-base" value="600" class="salsa-base-option"> Salsa BBQ <b class="precio-item">&nbsp;&nbsp;&nbsp;$600</b><i class="far fa-circle"></i></label></div>
+    </div>
+    <script src="congelados-pizza-script.js"></script>
+</body>
+</html>

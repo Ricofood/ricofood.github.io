@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICO!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Raleway:wght@700&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/224b424510.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="pedido-congelados-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/654edfaacec6a912820ec774/1heu1jcne';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+</head>
+<body>
+    <div id="pedido-dropdown-panel">
+        <div id="scroll-pedidos">
+
+        </div>
+        <p id="dropdown-subtotal">Subtotal: $</p>
+    </div>
+    <nav>
+        <input type="checkbox" id="toggle-menu" aria-label="Abrir menú">
+        <label for="toggle-menu" id="toggle-menu-button">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="https://ricofood.github.io/index.html" class="enlace">
+            <img class="logo" src="rico!.png">
+        </a>
+
+        <ul>
+            <li><a class="active" href="">COMIDAS</a></li>
+            <li><a href="https://ricofood.github.io/congelados-pizzas.html">PIZZAS</a></li>
+            <li><a href="">VARIOS</a></li>
+        </ul>
+        <div id="pedido"><i class="fa-solid fa-cart-shopping">&nbsp;</i><a id="total" href="pedido.html"></a><i id="caret-down" class="fa-solid fa-caret-down"></i><i id="caret-up" class="fa-solid fa-caret-up"></i></div>
+        <a id="wsp-icon" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+    </nav>
+    <div id="confirmacion" class="confirmacion">
+        <div class="modal">
+            <p>¡AGREGADO CON ÉXITO!</p>
+            <button id="agregarOtro">AGREGAR OTRA PIZZA</button>
+            <button id="irAPedido">IR A PEDIDO</button>
+        </div>
+    </div>
+    <div id="panel-pedido">
+        <div id="titulos">
+            <p id="producto">PRODUCTO</p>
+            <p id="cantidad">CANTIDAD</p>
+            <p id="valor">VALOR</p>
+        </div>
+        
+        <div id="pedidos">
+        </div>
+    </div>
+    <div id="control">
+        <button id="abrir-confirmacion" class="agregar-pizza">TERMINAR PEDIDO</button>
+        <button id="borrar-pizza">ELIMINAR PEDIDO</button>
+        <div id="subtotal1">Subtotal: $0</div>
+    </div>
+    <script src="pedido-congelados-script.js"></script>
+</body>
+</html>
