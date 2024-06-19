@@ -53,6 +53,9 @@ li a:hover {
 #wsp-message{
     display:none;
 }
+#wsp-icon2{
+        display: none;
+    }
 #toggle-menu-button {
     font-size: 30px;
     color: #FFF;
@@ -665,6 +668,7 @@ li a:hover {
 
 
 #wsp-icon {
+    display:block;
     background-color: #25d366;
     color: #FFF;
     padding: 2px 8px;
@@ -677,6 +681,29 @@ li a:hover {
     z-index: 999;
 }
     #wsp-icon i {
+        margin-top: 5px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+    #wsp-movil{
+            width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    }
+    #wsp-icon2 {
+    display:block;
+    background-color: #25d366;
+    color: #FFF;
+    padding: 2px 8px;
+    border-radius: 50%;
+    font-size: 35px;
+    text-align: center;
+    z-index: 999;
+    scale: 2.2;
+}
+    #wsp-icon2 i {
         margin-top: 5px;
         margin-right: 0px;
         margin-left: 0px;
@@ -697,13 +724,19 @@ li a:hover {
     #toggle-menu-button {
         display: block;
     }
-    #wsp-icon {
+    /*#wsp-icon {
         position: fixed;
         bottom: 0px;
         right: 0%;
         margin-right: 190px;
         margin-bottom: 280px;
         scale: 2.2;
+    }*/
+    #wsp-icon{
+        display:none;
+    }
+    #wsp-icon2{
+        display: block;
     }
     #wsp-message{
         display: flex;
