@@ -292,7 +292,7 @@ li a:hover {
     #espacio-menu1 .info-principal .precio {
         margin-bottom: 0px;
         margin-top: 0px;
-        margin-left: 75px;
+        margin-left: 50px;
     }
 
     #espacio-menu1 .info-secundaria p {
@@ -747,6 +747,7 @@ li a:hover {
         justify-content: center;
         margin-top: 80px;
         text-decoration: underline;
+        text-align: center;
         color: #00583d;
     }
     nav {
@@ -791,7 +792,10 @@ li a:hover {
     }
 
     #espacio-menu1 .info-principal .precio {
-        margin-left: 34px;
+        margin-left: 220px;
+    }
+    #espacio-menu1 .info-secundaria p {
+        margin-right: 320px;
     }
 
     #espacio-menu2 .info-principal .guion {
@@ -1148,6 +1152,7 @@ li a:hover {
         justify-content: center;
         margin-top: 80px;
         text-decoration: underline;
+        text-align: center;
         color: #00583d;
     }
     nav {
@@ -1190,9 +1195,11 @@ li a:hover {
     #espacio-menu1 .info-principal .guion {
         margin-right: 20px;
     }
-
+    #espacio-menu1 .info-principal .plato {
+        width: 150px;
+    }
     #espacio-menu1 .info-principal .precio {
-        margin-left: 34px;
+        margin-left: 55px;
     }
 
     #espacio-menu2 .info-principal .guion {
