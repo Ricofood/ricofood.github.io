@@ -795,7 +795,7 @@ li a:hover {
         margin-left: 220px;
     }
     #espacio-menu1 .info-secundaria p {
-        margin-right: 320px;
+        margin-right: 164px;
     }
 
     #espacio-menu2 .info-principal .guion {
@@ -1200,6 +1200,9 @@ li a:hover {
     }
     #espacio-menu1 .info-principal .precio {
         margin-left: 55px;
+    }
+    #espacio-menu1 .info-secundaria p {
+        margin-right: 164px;
     }
 
     #espacio-menu2 .info-principal .guion {
