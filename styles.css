@@ -1107,7 +1107,7 @@ li a:hover {
             margin-left: 114px;
         }
 }
-@media (max-width: 390px) {
+@media (max-width: 540px) {
     
     #toggle-menu-button {
         display: block;
