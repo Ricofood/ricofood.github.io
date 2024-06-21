@@ -792,10 +792,10 @@ li a:hover {
     }
 
     #espacio-menu1 .info-principal .precio {
-        margin-left: 220px;
+        margin-left: 100px;
     }
     #espacio-menu1 .info-secundaria p {
-        margin-right: 164px;
+        margin-right: 140px;
     }
 
     #espacio-menu2 .info-principal .guion {
@@ -1107,7 +1107,7 @@ li a:hover {
             margin-left: 114px;
         }
 }
-@media (max-width: 540px) {
+@media (max-width: 390px) {
     
     #toggle-menu-button {
         display: block;
@@ -1200,9 +1200,6 @@ li a:hover {
     }
     #espacio-menu1 .info-principal .precio {
         margin-left: 55px;
-    }
-    #espacio-menu1 .info-secundaria p {
-        margin-right: 164px;
     }
 
     #espacio-menu2 .info-principal .guion {
