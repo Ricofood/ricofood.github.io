@@ -287,18 +287,19 @@ li a:hover {
     #espacio-menu1 .info-principal .plato {
         margin-bottom: 0px;
         margin-top: 0px;
+        margin-left: 34px;
     }
 
     #espacio-menu1 .info-principal .precio {
         margin-bottom: 0px;
         margin-top: 0px;
-        margin-left: 50px;
+        margin-left: 124px;
     }
 
     #espacio-menu1 .info-secundaria p {
         margin-bottom: 0px;
         margin-top: 0px;
-        margin-right: 105px;
+        margin-right: 154px;
         font-size: 12pt;
     }
 
@@ -571,16 +572,16 @@ li a:hover {
         #menu-jueves .espacio1 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 4px;
+            margin-left: 60px;
         }
 
         #menu-jueves .espacio1 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 106px;
+            margin-left: 84px;
         }
         #menu-jueves .espacio1 .precio{
-            margin-left: 127px;
+            margin-left: 195px;
         }
         #menu-jueves .espacio2 .platos {
             margin-left: 20px;
@@ -653,16 +654,16 @@ li a:hover {
         #menu-viernes .espacio2 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 40px;
+            margin-left: 12px;
         }
 
         #menu-viernes .espacio2 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 72px;
+            margin-left: 82px;
         }
         #menu-viernes .espacio2 .precio{
-            margin-left: 168px;
+            margin-left: 117px;
         }
 
 
@@ -791,11 +792,14 @@ li a:hover {
         margin-right: 20px;
     }
 
-    #espacio-menu1 .info-principal .precio {
+    #espacio-menu1 .info-principal .plato {
         margin-left: 100px;
     }
+    #espacio-menu1 .info-principal .precio {
+        margin-left: 370px;
+    }
     #espacio-menu1 .info-secundaria p {
-        margin-right: 140px;
+        margin-right: 380px;
     }
 
     #espacio-menu2 .info-principal .guion {
@@ -1013,16 +1017,16 @@ li a:hover {
         #menu-jueves .espacio1 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 5px;
+            margin-left: 50px;
         }
 
         #menu-jueves .espacio1 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 58px;
+            margin-left: 50px;
         }
         #menu-jueves .espacio1 .precio{
-            margin-left: 85px;
+            margin-left: 143px;
         }
         #menu-jueves .espacio2 .platos {
             margin-left: 20px;
@@ -1095,16 +1099,16 @@ li a:hover {
         #menu-viernes .espacio2 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 40px;
+            margin-left: 12px;
         }
 
         #menu-viernes .espacio2 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 36px;
+            margin-left: 38px;
         }
         #menu-viernes .espacio2 .precio{
-            margin-left: 114px;
+            margin-left: 75px;
         }
 }
 @media (max-width: 390px) {
@@ -1197,11 +1201,14 @@ li a:hover {
     }
     #espacio-menu1 .info-principal .plato {
         width: 150px;
+        margin-left: 5px;
     }
     #espacio-menu1 .info-principal .precio {
-        margin-left: 55px;
+        margin-left: 30px;
     }
-
+    #espacio-menu1 .info-secundaria p{
+        margin-right: 100px;
+    }
     #espacio-menu2 .info-principal .guion {
         margin-right: 8px;
     }
@@ -1417,16 +1424,16 @@ li a:hover {
         #menu-jueves .espacio1 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 5px;
+            margin-left: 50px;
         }
 
         #menu-jueves .espacio1 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 58px;
+            margin-left: 50px;
         }
         #menu-jueves .espacio1 .precio{
-            margin-left: 85px;
+            margin-left: 143px;
         }
         #menu-jueves .espacio2 .platos {
             margin-left: 20px;
@@ -1499,16 +1506,16 @@ li a:hover {
         #menu-viernes .espacio2 .info-principal .plato {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 40px;
+            margin-left: 12px;
         }
 
         #menu-viernes .espacio2 .info-secundaria p {
             margin-bottom: 0px;
             margin-top: 0px;
-            margin-left: 36px;
+            margin-left: 38px;
         }
         #menu-viernes .espacio2 .precio{
-            margin-left: 114px;
+            margin-left: 75px;
         }
 }
 
