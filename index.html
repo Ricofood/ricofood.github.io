@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600&family=Raleway:wght@700&family=Roboto+Condensed:wght@700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/224b424510.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 <body>
     <nav>
@@ -43,21 +42,11 @@
                 <h1>LUNES</h1>
                 <div class="contenido-menu-semanal">
                     <div class="platos">
-                        <div class="espacio1">
+                        <div class="espacio-semanal">
                             <div class="info-principal">
-                                <p class="guion">-</p><p class="plato">AJÍ DE GALLINA</p><p class="precio">$3500</p>
-                            </div>
-                            <div class="info-secundaria">
-                                <p>(c/ARROZ Y PAPA COCIDA)</p>
+                                <p class="guion">-</p><div class="info-plato"><div><p class="plato">AJÍ DE GALLINA</p><p class="info-secundaria">(c/ARROZ Y PAPA COCIDA)</p></div></div><p class="precio">$3500</p>
                             </div>
                         </div>
-                        <div class="espacio2" style="margin: 20px 0;">
-                            <div class="info-principal">
-                                <p class="guion">-</p><p class="plato">CARNE AL JUGO</p><p class="precio">$4000</p>
-                            </div>
-                            <div class="info-secundaria"><p>(c/ARROZ o PURÉ)</p>
-                            </div>
-                        </div>  
                     </div>
                 </div>
             </div>
@@ -149,7 +138,31 @@
     </div>
     <p id="wsp-message">HAZ TU PEDIDO AQUÍ</p>
     <div id="wsp-movil"> <a id="wsp-icon2" href="https://wa.me/56974851454" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
-   
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCBJuNF1NtcQkwjdcqwKdB3M654-2nnxGc",
+    authDomain: "rico-fb96d.firebaseapp.com",
+    databaseURL: "https://rico-fb96d-default-rtdb.firebaseio.com/",
+    projectId: "rico-fb96d",
+    storageBucket: "rico-fb96d.appspot.com",
+    messagingSenderId: "914342864676",
+    appId: "1:914342864676:web:aa3029bf5a22209d9035b1",
+    measurementId: "G-DNREG5TCQL"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+    <script src="index.js" type="module"></script>
     <script src="script.js"></script>
 </body>
 </html>        
