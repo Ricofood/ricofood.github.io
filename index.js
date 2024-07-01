@@ -1,25 +1,20 @@
-import firebase from "firebase/app";
-import "firebase/compat/database";
+ import firebase from "firebase/app";
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-  // ...
-  // The value of `databaseURL` depends on the location of the database
-  databaseURL: "https://DATABASE_NAME.firebaseio.com",
-};
+ const firebaseConfig = {
+    apiKey: "AIzaSyCBJuNF1NtcQkwjdcqwKdB3M654-2nnxGc",
+    authDomain: "rico-fb96d.firebaseapp.com",
+    databaseURL: "https://rico-fb96d-default-rtdb.firebaseio.com/",
+    projectId: "rico-fb96d",
+    storageBucket: "rico-fb96d.appspot.com",
+    messagingSenderId: "914342864676",
+    appId: "1:914342864676:web:aa3029bf5a22209d9035b1",
+    measurementId: "G-DNREG5TCQL"
+  };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
-// Initialize Realtime Database and get a reference to the service
-const database = firebase.database();
-
-/// TODO   Funcion de escucha que al momento de modificarse la informacion haga saltar un anuncio diciendo que el menu cambio y es necesario refrescar la pagina
-
 const dbRef = firebase.database().ref();
-dbRef.child("Menu Semanal").get().then((snapshot) => {
+dbRef.child("Menu Semanal").once('value').then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val());
   } else {
